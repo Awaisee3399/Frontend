@@ -105,7 +105,7 @@ const SignUp = () => {
         }}
       >
         <Typography variant="h5" fontWeight={700} align="center" gutterBottom>
-          Create Account 📝
+          Create Account
         </Typography>
         <Typography
           variant="body2"
@@ -117,8 +117,10 @@ const SignUp = () => {
         </Typography>
 
         <form onSubmit={handleSubmit}>
+          <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+            Full Name
+          </Typography>
           <TextField
-            label="Full Name"
             name="name"
             fullWidth
             margin="normal"
@@ -126,12 +128,13 @@ const SignUp = () => {
             onChange={handleChange}
             error={!!errors.name}
             helperText={errors.name}
-            InputLabelProps={{ style: { color: "#fff" } }}
             InputProps={{ style: { color: "#fff" } }}
           />
 
+          <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+            Email
+          </Typography>
           <TextField
-            label="Email"
             name="email"
             type="email"
             fullWidth
@@ -140,12 +143,13 @@ const SignUp = () => {
             onChange={handleChange}
             error={!!errors.email}
             helperText={errors.email}
-            InputLabelProps={{ style: { color: "#fff" } }}
             InputProps={{ style: { color: "#fff" } }}
           />
 
+          <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+            Password
+          </Typography>
           <TextField
-            label="Password"
             name="password"
             type="password"
             fullWidth
@@ -154,12 +158,13 @@ const SignUp = () => {
             onChange={handleChange}
             error={!!errors.password}
             helperText={errors.password}
-            InputLabelProps={{ style: { color: "#fff" } }}
             InputProps={{ style: { color: "#fff" } }}
           />
 
+          <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+            Confirm Password
+          </Typography>
           <TextField
-            label="Confirm Password"
             name="confirmPassword"
             type="password"
             fullWidth
@@ -168,12 +173,11 @@ const SignUp = () => {
             onChange={handleChange}
             error={!!errors.confirmPassword}
             helperText={errors.confirmPassword}
-            InputLabelProps={{ style: { color: "#fff" } }}
             InputProps={{ style: { color: "#fff" } }}
           />
 
           {serverError && (
-            <Typography color="error" variant="body2" mt={1}>
+            <Typography color="error" variant="body2">
               {serverError}
             </Typography>
           )}

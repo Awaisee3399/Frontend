@@ -77,8 +77,10 @@ const SignIn = () => {
         </Typography>
 
         <form onSubmit={handleSubmit}>
+          <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+            Email
+          </Typography>
           <TextField
-            label="Username"
             variant="outlined"
             fullWidth
             margin="normal"
@@ -86,14 +88,15 @@ const SignIn = () => {
             onChange={(e) => setEmail(e.target.value)}
             error={!!errors.email}
             helperText={errors.email}
-            InputLabelProps={{ style: { color: "#fff" } }}
             InputProps={{
-              style: { color: "#fff", borderColor: "#fff" },
+              style: { color: "#fff" },
             }}
           />
 
+          <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+            Password
+          </Typography>
           <TextField
-            label="Password"
             type="password"
             variant="outlined"
             fullWidth
@@ -102,9 +105,8 @@ const SignIn = () => {
             onChange={(e) => setPassword(e.target.value)}
             error={!!errors.password}
             helperText={errors.password}
-            InputLabelProps={{ style: { color: "#fff" } }}
             InputProps={{
-              style: { color: "#fff", borderColor: "#fff" },
+              style: { color: "#fff" },
             }}
           />
 
