@@ -20,10 +20,7 @@
     "bootstrap": "^5.3.5",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.13",
-<<<<<<< HEAD
     "framer-motion": "^12.23.6",
-=======
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-input-mask": "^2.0.4",
