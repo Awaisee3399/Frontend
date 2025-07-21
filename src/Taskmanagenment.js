@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import SearchIcon from "@mui/icons-material/Search";
-<<<<<<< HEAD
 import RefreshIcon from "@mui/icons-material/Refresh";
-=======
-import RefreshIcon from '@mui/icons-material/Refresh';
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
 import {
   Typography,
   Grid,
@@ -49,41 +45,26 @@ const Taskmanagenment = () => {
   const [openAddtask, setOpenAddtask] = useState(false);
   const [updatetask, setUpdatetask] = useState(false);
   const [taskList, setTaskList] = useState([]);
-<<<<<<< HEAD
   console.log("check data", taskList);
-=======
-  console.log("check data", taskList)
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
   const [taskId, setTaskId] = useState(null);
   const [selectedTask, setSelectedTask] = useState(null);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
   const [searchText, setSearchText] = useState("");
-<<<<<<< HEAD
   console.log("check searchtext", searchText);
   const [openlog, setOpenlog] = useState(false);
   const [dueDate, setDueDate] = useState(null);
   console.log("check date ", dueDate);
-=======
-  console.log("check searchtext", searchText)
-  const [openlog, setOpenlog] = useState(false);
-  const [dueDate, setDueDate] = useState(null);
-  console.log("check date ", dueDate)
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
   const [tasks, setTasks] = useState([]);
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [after100, setAfter100] = useState(0);
-<<<<<<< HEAD
   const [paginationBatch, setPaginationBatch] = useState({
     in_Page_Number: 1,
     in_Rows: 100,
   });
-=======
-  const [paginationBatch, setPaginationBatch] = useState({ in_Page_Number: 1, in_Rows: 100 });
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
   const handlePageChange = (event, newPage) => {
     const isNext = newPage > page;
 
@@ -132,16 +113,9 @@ const Taskmanagenment = () => {
     }
   };
   const handleRefresh = () => {
-<<<<<<< HEAD
     setDueDate(null);
     setSearchText("");
   };
-=======
-    setDueDate(null)
-    setSearchText("")
-
-  }
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
   const handleRowsPerPageChange = (event) => {
     const value = parseInt(event.target.value, 10);
     setRowsPerPage(value);
@@ -300,11 +274,7 @@ const Taskmanagenment = () => {
         return date.toLocaleDateString();
       },
     },
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
     {
       field: "file",
       headerName: "Attachment",
@@ -313,15 +283,11 @@ const Taskmanagenment = () => {
       renderCell: (params) => {
         const file = params.value;
         if (!file || !file.mimeType) {
-<<<<<<< HEAD
           return (
             <Typography variant="caption" color="gray">
               No file
             </Typography>
           );
-=======
-          return <Typography variant="caption" color="gray">No file</Typography>;
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
         }
 
         const fileUrl = `https://backend-8226.onrender.com/api/tasks/${file.path}`;
@@ -331,15 +297,7 @@ const Taskmanagenment = () => {
         if (file.mimeType.startsWith("image/")) {
           return (
             <Tooltip title="Click to view">
-<<<<<<< HEAD
               <a href={fileUrl} target="_blank" rel="noopener noreferrer">
-=======
-              <a
-                href={fileUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
                 <img
                   src={fileUrl}
                   alt={fileName}
@@ -437,7 +395,6 @@ const Taskmanagenment = () => {
     });
 
     try {
-<<<<<<< HEAD
       const response = await fetch(
         `https://backend-8226.onrender.com/api/tasks?${params}`,
         {
@@ -446,13 +403,6 @@ const Taskmanagenment = () => {
           },
         }
       );
-=======
-      const response = await fetch(`https://backend-8226.onrender.com/api/tasks?${params}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
 
       const { data } = await response.json();
 
@@ -513,7 +463,6 @@ const Taskmanagenment = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-<<<<<<< HEAD
         <Grid
           container
           alignItems="center"
@@ -742,358 +691,6 @@ const Taskmanagenment = () => {
         </Box>
 
         {/*  */}
-=======
-        <Box sx={{ padding: "10px 10px 10px 10px" }}>
-          <Grid
-            container
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-            sx={{ padding: "4px 7px", background: "#EFF2F7", gap: "5px" }}
-          >
-            <Grid
-              item
-              container
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-              xl={12}
-              sx={{
-                background: "white",
-                borderRadius: "6px",
-                border: "1px solid #CDCDCD",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Grid item xs={12} sm={12} md={12} lg={9} xl={9}>
-                <Grid
-                  container
-                  item
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  xl={12}
-                  sx={{
-                    background: "white",
-                    borderRadius: "6px",
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    p: 1,
-                  }}
-                >
-                  <Grid
-                    item
-                    xs={1}
-                    sm={1}
-                    md={1}
-                    lg={1}
-                    xl={1}
-                    sx={{
-                      padding: "13px 10px 1px 10px",
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Typography
-                        variant="h6"
-                        fontWeight="bold"
-                        sx={{ whiteSpace: "nowrap" }}
-                      >
-                        Task Management
-                      </Typography>
-                    </Box>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    md={6}
-                    lg={6}
-                    xl={6}
-                    sx={{
-                      padding: "13px 15px 1px 70px",
-                      display: "flex",
-                      alignItems: "center",
-                      marginLeft: "65px",
-                      justifyContent: "space-between",
-                      gap: "5px"
-                    }}
-                  >
-
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: "100%",
-                        height: "30px",
-                      }}
-                    >
-                      <TextField
-                        size="small"
-                        label="Search Title & Description"
-                        variant="outlined"
-                        value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
-                        fullWidth
-                        sx={{ minWidth: "150px" }}
-                        InputProps={{
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <SearchIcon />
-                            </InputAdornment>
-                          ),
-                        }}
-                      />
-                    </Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        width: "100%",
-                      }}
-                    >
-                      <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker
-                          value={dueDate}
-                          onChange={(newValue) => setDueDate(newValue)}
-                          format="YYYY-MM-DD"
-                          slotProps={{
-                            textField: {
-                              placeholder: "Search due date",
-                              size: "small",
-                              variant: "outlined",
-                              sx: {
-                                width: "100%",
-                                minWidth: "150px",
-                                "& .MuiInputBase-root": {
-                                  height: "40px",
-                                  fontSize: "16px",
-                                },
-                              },
-                            },
-                          }}
-                        />
-                      </LocalizationProvider>
-                    </Box>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        marginLeft: "10px"
-                      }}
-                    >
-                      <Tooltip title="Refresh">
-                        <IconButton
-                          onClick={handleRefresh}
-                          sx={{
-                            backgroundColor: "green",
-                            color: "white",
-                            borderRadius: "6px",
-                            "&:hover": {
-                              backgroundColor: "#007d00",
-                            },
-                            width: "40px",
-                            height: "40px",
-                          }}
-                        >
-                          <RefreshIcon fontSize="small" />
-                        </IconButton>
-                      </Tooltip>
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Grid>
-
-              {/*  */}
-
-              <Grid
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={3}
-                xl={3}
-                sx={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  alignItems: "center",
-                }}
-              >
-                <>
-                  <FormControl
-                    sx={{ padding: "13px 30px 1px 20px" }}
-                    size="small"
-                  >
-                    <span>
-                      <Button
-                        sx={{
-                          background: "#1A6C71",
-                          color: "white",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "5px",
-                        }}
-                        onClick={AddTaskOpen}
-                      >
-                        <AddCircleTwoToneIcon sx={{ height: "15px" }} />
-                        <Typography
-                          sx={{
-                            fontSize: {
-                              xs: "10px",
-                              sm: "10px",
-                              lg: "10px",
-                              xl: "12px",
-                              md: "10px",
-                            },
-                          }}
-                        >
-                          {" "}
-                          Add
-                        </Typography>
-                      </Button>
-                    </span>
-                  </FormControl>
-                  <FormControl
-                    sx={{ padding: "13px 30px 1px 20px" }}
-                    size="small"
-                  >
-                    <span>
-                      <Button
-                        sx={{
-                          background: "#1A6C71",
-                          color: "white",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "5px",
-                        }}
-                        onClick={handleClickOpenlog}
-                      >
-                        <LogoutIcon sx={{ height: "15px" }} />
-                        <Typography
-                          sx={{
-                            fontSize: {
-                              xs: "10px",
-                              sm: "10px",
-                              lg: "10px",
-                              xl: "12px",
-                              md: "10px",
-                            },
-                          }}
-                        >
-                          Logout
-                        </Typography>
-                      </Button>
-                    </span>
-                  </FormControl>
-                </>
-              </Grid>
-            </Grid>
-            <Box
-              sx={{
-                height: {
-                  xl: "75vh",
-                  lg: "100vh",
-                  md: "60vh",
-                  xs: "80vh",
-                  sm: "80vh",
-                },
-                overflow: "auto",
-                width: "100%",
-                background: "white",
-              }}
-            >
-              <DataGrid
-                rows={taskList}
-                columns={columns}
-                getRowId={(row) => row.taskId}
-                pagination
-                page={page}
-                pageSize={rowsPerPage}
-                paginationMode="client"
-                onPageChange={handlePageChange}
-                onPageSizeChange={handleRowsPerPageChange}
-                pageSizeOptions={[10, 25, 50, 100]}
-                initialState={{
-                  pagination: {
-                    paginationModel: {
-                      pageSize: 10,
-                      page: 1,
-                    },
-                  },
-                }}
-                sx={{
-                  "& .MuiDataGrid-columnHeader": {
-                    backgroundColor: "#e5f4ff",
-                    color: "black",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                    fontFamily: "inter",
-                    border: "0.5px solid white",
-                    "& .MuiDataGrid-columnHeaderTitleContainer": {
-                      justifyContent: "center",
-                      textAlign: "center",
-                    },
-                  },
-                  "& .MuiDataGrid-cell": {
-                    border: "1px solid #d3d3d3",
-                    textAlign: "center",
-                    backgroundColor: "white",
-                    color: "#585858",
-                    fontSize: "12px",
-                    fontWeight: 500,
-                    fontFamily: "inter",
-                  },
-                  "& .MuiDataGrid-row": {
-                    borderBottom: "1px solid #d3d3d3",
-                  },
-                  "& .MuiDataGrid-columnSeparator": {
-                    display: "block !important",
-                  },
-                  "& .MuiDataGrid-footerContainer": {
-                    justifyContent: "flex-end",
-                    height: "40px",
-                    backgroundColor: "#e5f4ff",
-                    color: "#000",
-                    paddingRight: "10px",
-                  },
-                  "& .MuiTablePagination-root": {
-                    justifyContent: "flex-end",
-                  },
-                  "& .MuiTablePagination-actions": {
-                    marginLeft: "auto",
-                  },
-                  "& .MuiTablePagination-displayedRows": {
-                    marginLeft: "10px",
-                  },
-                  "& .MuiInputBase-root": {
-                    width: "57px",
-                    height: "20px",
-                    borderRadius: "10%",
-                    backgroundColor: "white",
-                  },
-                }}
-              />
-            </Box>
-
-            {/*  */}
-          </Grid>
-        </Box>
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
       </ThemeProvider>
 
       <Modal
@@ -1101,11 +698,7 @@ const Taskmanagenment = () => {
         keepMounted
         onClose={AddTaskmanagement}
         aria-describedby="alert-dialog-slide-description"
-<<<<<<< HEAD
         //
-=======
-      //
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
       >
         <Box sx={{ width: "100%" }}>
           <TaskADdModel
@@ -1119,21 +712,13 @@ const Taskmanagenment = () => {
         keepMounted
         onClose={UpdateTaskmanagement}
         aria-describedby="alert-dialog-slide-description"
-<<<<<<< HEAD
         //
-=======
-      //
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
       >
         <Box sx={{ width: "100%" }}>
           <UpdateModel
             AddTaskClose={UpdateTaskmanagement}
             task={selectedTask}
             Fetchtask={fetchTasks}
-<<<<<<< HEAD
-=======
-
->>>>>>> 7fb2a65447a93b6ebe4ca47bf415205cc18b8f81
           />
         </Box>
       </Modal>
