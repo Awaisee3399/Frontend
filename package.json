@@ -1,6 +1,7 @@
 {
   "name": "patientscreen",
   "version": "0.1.0",
+  "author": "Awais",
   "private": true,
   "dependencies": {
     "@date-io/date-fns": "^2.16.0",
